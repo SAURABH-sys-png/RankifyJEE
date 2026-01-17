@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE Mains Rank Predictor 2026 | Accurate & Shift-wise</title>
+    <meta name="description" content="Predict your JEE Mains 2026 Rank and Percentile based on your expected score and shift difficulty. Updated for 14.5 Lakh candidates.">
+    <link rel="stylesheet" href="style.css">
+    <meta property="og:title" content="JEE Mains Rank Predictor 2026 - Check Your Percentile">
+    <meta property="og:description" content="Enter your marks and shift difficulty to get an accurate rank prediction based on 2024-2025 trends.">
+    <meta property="og:image" content="https://yourwebsite.com/thumbnail.png"> <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="fevicon.png">
+</head>
+<body>
+
+    <header class="hero-section">
+        <div class="container">
+            <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">🌙</button>
+
+            <h1>JEE Mains Rank Predictor 2026</h1>
+            <p class="subtitle">Enter your marks to get an instant rank estimate.</p>
+
+            <div class="calculator-card">
+                <div class="input-group">
+                    <label for="marks">Expected Marks (0 - 300)</label>
+                    <input type="number" id="marks" placeholder="e.g., 180" min="0" max="300">
+                </div>
+
+                <div class="input-group">
+                    <label for="difficulty">Shift Difficulty</label>
+                    <select id="difficulty">
+                        <option value="easy">Easy Shift</option>
+                        <option value="moderate" selected>Moderate Shift</option>
+                        <option value="hard">Hard Shift</option>
+                    </select>
+                </div>
+
+                <button class="predict-btn" onclick="calculateRank()">Predict My Rank</button>
+
+                <div class="transparency-trigger">
+                    <a href="#" id="openTransparencyBtn">
+                        <span class="icon">ℹ️</span> How is this calculated?
+                    </a>
+                </div>
+
+                <div id="result-box" class="result-box hidden">
+                    <h3>Your Prediction</h3>
+                    <div class="result-grid">
+                        <div class="res-item">
+                            <span>Percentile:</span>
+                            <strong id="percentile-display">--</strong>
+                        </div>
+                        <div class="res-item">
+                            <span>Rank:</span>
+                            <strong id="rank-display">--</strong>
+                        </div>
+                    </div>
+                    <p class="disclaimer">*Based on 14.5 Lakh unique candidates.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="ad-wrapper">
+        <p class="ad-label">Advertisement</p>
+        <div class="google-ad-placeholder">
+            <span style="color:#aaa; font-size:0.9rem;">Google Ad Banner Load Here</span>
+        </div>
+    </div>
+
+    <section class="analysis-section">
+        <div class="container">
+            <h2 class="section-title-main">Detailed Percentile Analysis</h2>
+
+            <div class="two-column-grid">
+                <div class="table-card">
+                    <div class="table-header-blue">
+                        <h3>January 2025 - Percentile vs Marks</h3>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Percentile</th>
+                                    <th>22S1</th><th>22S2</th><th>23S1</th><th>23S2</th><th>24S1</th><th>24S2</th><th>28S1</th><th>28S2</th><th>29S1</th><th>29S2</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>99</td><td>158</td><td>186</td><td>178</td><td>188</td><td>183</td><td>200</td><td>148</td><td>170</td><td>174</td><td>176</td></tr>
+                                <tr><td>98.5</td><td>143</td><td>173</td><td>167</td><td>175</td><td>168</td><td>186</td><td>136</td><td>158</td><td>162</td><td>165</td></tr>
+                                <tr><td>98</td><td>133</td><td>163</td><td>154</td><td>165</td><td>158</td><td>177</td><td>126</td><td>149</td><td>153</td><td>154</td></tr>
+                                <tr><td>97.5</td><td>128</td><td>155</td><td>145</td><td>158</td><td>150</td><td>166</td><td>120</td><td>142</td><td>145</td><td>149</td></tr>
+                                <tr><td>97</td><td>120</td><td>149</td><td>140</td><td>152</td><td>144</td><td>162</td><td>114</td><td>136</td><td>140</td><td>144</td></tr>
+                                <tr><td>96.5</td><td>115</td><td>143</td><td>134</td><td>147</td><td>137</td><td>156</td><td>110</td><td>131</td><td>135</td><td>140</td></tr>
+                                <tr><td>96</td><td>110</td><td>138</td><td>129</td><td>140</td><td>131</td><td>151</td><td>105</td><td>127</td><td>130</td><td>136</td></tr>
+                                <tr><td>95.5</td><td>105</td><td>134</td><td>124</td><td>136</td><td>126</td><td>148</td><td>100</td><td>121</td><td>126</td><td>129</td></tr>
+                                <tr><td>95</td><td>101</td><td>129</td><td>120</td><td>132</td><td>121</td><td>142</td><td>96</td><td>118</td><td>123</td><td>127</td></tr>
+                                <tr><td>94</td><td>94</td><td>122</td><td>112</td><td>124</td><td>111</td><td>133</td><td>90</td><td>111</td><td>116</td><td>120</td></tr>
+                                <tr><td>93</td><td>88</td><td>115</td><td>106</td><td>120</td><td>104</td><td>127</td><td>85</td><td>105</td><td>110</td><td>115</td></tr>
+                                <tr><td>92</td><td>85</td><td>108</td><td>101</td><td>111</td><td>97</td><td>121</td><td>85</td><td>104</td><td>109</td><td>113</td></tr>
+                                <tr><td>91</td><td>78</td><td>102</td><td>95</td><td>104</td><td>91</td><td>115</td><td>76</td><td>99</td><td>95</td><td>109</td></tr>
+                                <tr><td>90</td><td>74</td><td>98</td><td>89</td><td>101</td><td>85</td><td>112</td><td>70</td><td>90</td><td>94</td><td>101</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="table-note">Note: S1 = Morning Shift, S2 = Evening Shift</p>
+                </div>
+
+                <div class="table-card">
+                    <div class="table-header-blue">
+                        <h3>April 2025 - Percentile vs Marks</h3>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Percentile</th>
+                                    <th>2S1</th><th>2S2</th><th>3S1</th><th>3S2</th><th>4S1</th><th>4S2</th><th>7S1</th><th>7S2</th><th>8S2</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>99</td><td>173</td><td>203</td><td>174</td><td>201</td><td>175</td><td>177</td><td>177</td><td>183</td><td>185</td></tr>
+                                <tr><td>98.5</td><td>159</td><td>190</td><td>162</td><td>186</td><td>166</td><td>163</td><td>169</td><td>173</td><td>172</td></tr>
+                                <tr><td>98</td><td>150</td><td>182</td><td>152</td><td>174</td><td>155</td><td>156</td><td>161</td><td>165</td><td>162</td></tr>
+                                <tr><td>97.5</td><td>142</td><td>174</td><td>145</td><td>168</td><td>146</td><td>151</td><td>154</td><td>158</td><td>159</td></tr>
+                                <tr><td>97</td><td>137</td><td>169</td><td>141</td><td>163</td><td>145</td><td>141</td><td>147</td><td>151</td><td>150</td></tr>
+                                <tr><td>96.5</td><td>130</td><td>162</td><td>135</td><td>158</td><td>138</td><td>138</td><td>142</td><td>145</td><td>147</td></tr>
+                                <tr><td>96</td><td>126</td><td>157</td><td>133</td><td>151</td><td>135</td><td>134</td><td>139</td><td>142</td><td>140</td></tr>
+                                <tr><td>95.5</td><td>123</td><td>152</td><td>128</td><td>144</td><td>130</td><td>129</td><td>133</td><td>138</td><td>135</td></tr>
+                                <tr><td>95</td><td>117</td><td>147</td><td>127</td><td>142</td><td>126</td><td>125</td><td>128</td><td>134</td><td>133</td></tr>
+                                <tr><td>94</td><td>111</td><td>140</td><td>120</td><td>134</td><td>120</td><td>118</td><td>122</td><td>125</td><td>125</td></tr>
+                                <tr><td>93.1</td><td>107</td><td>135</td><td>116</td><td>127</td><td>115</td><td>113</td><td>118</td><td>122</td><td>119</td></tr>
+                                <tr><td>93</td><td>105</td><td>132</td><td>115</td><td>127</td><td>114</td><td>112</td><td>116</td><td>122</td><td>118</td></tr>
+                                <tr><td>92</td><td>100</td><td>125</td><td>111</td><td>121</td><td>109</td><td>107</td><td>111</td><td>117</td><td>113</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="table-note">Note: S1 = Morning Shift, S2 = Evening Shift</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="analysis-section">
+        <div class="container">
+            <h2 class="section-title-main">Shift-wise 99 Percentile Analysis</h2>
+
+            <div class="two-column-grid">
+                <div class="table-card">
+                    <div class="table-header-blue">
+                        <h3>January 2025 - 99 Percentile by Shift</h3>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table shift-table">
+                            <thead>
+                                <tr>
+                                    <th>Shift</th>
+                                    <th>Date & Time</th>
+                                    <th>99% Score</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Shift 1</td><td>22 Jan Morning (22S1)</td><td>158</td></tr>
+                                <tr><td>Shift 2</td><td>22 Jan Evening (22S2)</td><td>186</td></tr>
+                                <tr><td>Shift 3</td><td>23 Jan Morning (23S1)</td><td>178</td></tr>
+                                <tr><td>Shift 4</td><td>23 Jan Evening (23S2)</td><td>188</td></tr>
+                                <tr><td>Shift 5</td><td>24 Jan Morning (24S1)</td><td>183</td></tr>
+                                <tr><td>Shift 6</td><td>24 Jan Evening (24S2)</td><td>200</td></tr>
+                                <tr><td>Shift 7</td><td>28 Jan Morning (28S1)</td><td>148</td></tr>
+                                <tr><td>Shift 8</td><td>28 Jan Evening (28S2)</td><td>170</td></tr>
+                                <tr><td>Shift 9</td><td>29 Jan Morning (29S1)</td><td>174</td></tr>
+                                <tr><td>Shift 10</td><td>29 Jan Evening (29S2)</td><td>176</td></tr>
+                            </tbody>
+                            <tfoot>
+                                <tr class="summary-row">
+                                    <td><strong>Average</strong></td><td></td><td><strong>176</strong></td>
+                                </tr>
+                                <tr class="summary-row">
+                                    <td><strong>Median</strong></td><td></td><td><strong>176</strong></td>
+                                </tr>
+                                <tr class="summary-row">
+                                    <td><strong>Range</strong></td><td></td><td><strong>147-200</strong></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="table-card">
+                    <div class="table-header-blue">
+                        <h3>April 2025 - 99 Percentile by Shift</h3>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table shift-table">
+                            <thead>
+                                <tr>
+                                    <th>Shift</th>
+                                    <th>Date & Time</th>
+                                    <th>99% Score</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Shift 1</td><td>2 Apr Morning (2S1)</td><td>173</td></tr>
+                                <tr><td>Shift 2</td><td>2 Apr Evening (2S2)</td><td>202</td></tr>
+                                <tr><td>Shift 3</td><td>3 Apr Morning (3S1)</td><td>174</td></tr>
+                                <tr><td>Shift 4</td><td>3 Apr Evening (3S2)</td><td>201</td></tr>
+                                <tr><td>Shift 5</td><td>4 Apr Morning (4S1)</td><td>175</td></tr>
+                                <tr><td>Shift 6</td><td>4 Apr Evening (4S2)</td><td>177</td></tr>
+                                <tr><td>Shift 7</td><td>7 Apr Morning (7S1)</td><td>180</td></tr>
+                                <tr><td>Shift 8</td><td>7 Apr Evening (7S2)</td><td>184</td></tr>
+                                <tr><td>Shift 9</td><td>8 Apr Evening (8S2)</td><td>185</td></tr>
+                            </tbody>
+                            <tfoot>
+                                <tr class="summary-row summary-green">
+                                    <td><strong>Average</strong></td><td></td><td><strong>183</strong></td>
+                                </tr>
+                                <tr class="summary-row summary-green">
+                                    <td><strong>Median</strong></td><td></td><td><strong>180</strong></td>
+                                </tr>
+                                <tr class="summary-row summary-green">
+                                    <td><strong>Range</strong></td><td></td><td><strong>173-202</strong></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="affiliate-section">
+        <div class="container">
+            <h2 class="section-title">🚀 Best Books to Boost Your Rank</h2>
+            <p class="section-desc">Top-rated resources used by toppers for JEE Advanced & Mains.</p>
+            
+            <div class="book-grid">
+                <div class="book-card">
+                    <div class="book-icon">⚛️</div>
+                    <h3>Concepts of Physics</h3>
+                    <p class="author">by H.C. Verma</p>
+                    <p class="desc">The "Bible" of Physics. Essential for building strong fundamentals.</p>
+                    <a href="https://amzn.to/4jV1Ob9" target="_blank" class="buy-btn">Check Price on Amazon</a>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-icon">📐</div>
+                    <h3>Mathematics for JEE</h3>
+                    <p class="author">by Cengage (G. Tewani)</p>
+                    <p class="desc">Best for deep practice and tough calculus problems.</p>
+                    <a href="https://amzn.to/3YK7sTU" target="_blank" class="buy-btn">Check Price on Amazon</a>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-icon">🧪</div>
+                    <h3>Organic Chemistry</h3>
+                    <p class="author">by M.S. Chouhan</p>
+                    <p class="desc">The gold standard for solving complex organic reaction mechanisms.</p>
+                    <a href="https://amzn.to/4bnviwj" target="_blank" class="buy-btn">Check Price on Amazon</a>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-icon">📝</div>
+                    <h3>46 Years JEE Solved</h3>
+                    <p class="author">by Arihant / Disha</p>
+                    <p class="desc">Previous Year Questions (PYQs) are the #1 way to predict your score.</p>
+                    <a href="https://amzn.to/4jNTDxi" target="_blank" class="buy-btn">Check Price on Amazon</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <article class="faq-item">
+                <h3>How does shift difficulty affect my percentile?</h3>
+                <p>JEE Mains uses normalization. Scoring 180 in a <strong>Hard Shift</strong> might fetch you 99%ile, while the same score in an <strong>Easy Shift</strong> might only get you 97%ile due to the higher average performance of students in easier papers.</p>
+            </article>
+
+            <article class="faq-item">
+                <h3>How is the rank calculated for 2026?</h3>
+                <p>We use the standard formula: <em>((100 - Percentile) * Total Candidates) / 100</em>. For 2026, we are estimating approximately 14.5 Lakh unique candidates appearing for the exam.</p>
+            </article>
+
+            <article class="faq-item">
+                <h3>Is this prediction 100% accurate?</h3>
+                <p>No tool can be 100% accurate as the actual results depend on the specific performance of all candidates in your shift. However, our data is based on past year trends to give you the closest possible estimate.</p>
+            </article>
+        </div>
+    </section>
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-desc">Have suggestions, found a bug, or want to collaborate? Drop us an email!</p>
+            
+            <div class="contact-card">
+                <span class="email-icon">📧</span>
+                <a href="mailto:jeemainsrankpredictor@gmail.com" class="email-link">
+                    jeemainsrankpredictor@gmail.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <p>
+            &copy; 2026 JEE Rank Predictor. All rights reserved. <br>
+            <a href="privacy.html" style="color: #666; text-decoration: underline; font-size: 0.85rem;">Privacy Policy & Disclaimer</a>
+        </p>
+    </footer>
+
+    <div id="logicModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Algorithm Logic</h3>
+                <span class="close-btn">&times;</span>
+            </div>
+            
+            <div class="modal-body">
+                <p class="intro-text">Our prediction engine uses <strong>Linear Interpolation</strong> based on historical JoSAA data (2024-2025).</p>
+                
+                <div class="logic-box">
+                    <div class="formula">
+                        <span class="var">Rank</span> = 
+                        <span class="func">f</span>(<span class="var">Percentile</span>, <span class="var">Candidates</span>)
+                    </div>
+                    <ul class="logic-steps">
+                        <li><strong>Step 1:</strong> We normalize your marks against the 2024 difficulty curve.</li>
+                        <li><strong>Step 2:</strong> We apply a "Shift Multiplier" based on your selected difficulty.</li>
+                        <li><strong>Step 3:</strong> Rank is projected assuming ~14.5 Lakh unique candidates.</li>
+                    </ul>
+                </div>
+
+                <div class="disclaimer">
+                    <small>*Prediction accuracy is ±5% due to variable tie-breaking rules used by NTA.</small>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button id="closeModalBtn">Got it</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
